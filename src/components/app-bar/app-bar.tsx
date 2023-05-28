@@ -14,7 +14,6 @@ interface AppbarProps {
 }
 
 export default function AppBar({ open, setOpen, sourceValue, setSourceValue, sources, setSources, disabled }: AppbarProps) {
-    DropDownPicker.setTheme("LIGHT");
     return (
         <View style={styles.container}>
             <DropDownPicker
