@@ -11,15 +11,6 @@ export default StyleSheet.create({
     elevation: 4,
     shadowOpacity: 4,
   },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  menuIcon: {
-    fontSize: 24,
-    color: '#fff',
-  },
   dropdownContainer: {
     width: 200,
     backgroundColor: '#f4511e',
@@ -31,4 +22,8 @@ export default StyleSheet.create({
     zIndex: 999,
     elevation: 999
   },
+  dropdownDisabled: {
+    opacity: 0.5,
+    backgroundColor: '#f2f2f2',
+  }
 });

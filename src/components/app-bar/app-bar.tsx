@@ -10,9 +10,10 @@ interface AppbarProps {
     setSourceValue: React.Dispatch<React.SetStateAction<string>>;
     sources: Source[];
     setSources: React.Dispatch<React.SetStateAction<Source[]>>;
+    disabled?: boolean;
 }
 
-export default function AppBar({ open, setOpen, sourceValue, setSourceValue, sources, setSources }: AppbarProps) {
+export default function AppBar({ open, setOpen, sourceValue, setSourceValue, sources, setSources, disabled }: AppbarProps) {
     return (
         <View style={styles.container}>
             <DropDownPicker
@@ -23,7 +24,8 @@ export default function AppBar({ open, setOpen, sourceValue, setSourceValue, sou
                 setValue={setSourceValue}
                 setItems={setSources}
                 containerStyle={styles.dropdownContainer}
-                style={styles.dropdown}
+                style={disabled ? styles.dropdownDisabled : styles.dropdown}
+                disabled={disabled}
             />
         </View>
     )

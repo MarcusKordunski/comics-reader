@@ -3,8 +3,19 @@ import { AppBar, Library } from '../components'
 import { useState, useEffect } from 'react'
 import { LibraryItem } from '../interfaces/interfaces'
 import axios from 'axios';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export default function Dashboard() {
+export type RootStackParamList = {
+    Dashboard: undefined;
+    Comic: { itemId: number };
+};
+export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Dashboard'>;
+
+interface DashboardProps {
+    navigation: HomeScreenNavigationProp;
+}
+
+export default function Dashboard({ navigation }: DashboardProps) {
     const [libraryData, setLibraryData] = useState<LibraryItem[]>([])
     const [loading, setLoading] = useState<boolean>(false);
     const [hasMore, setHasMore] = useState(true);
@@ -74,7 +85,7 @@ export default function Dashboard() {
     return (
         <View style={{ flex: 1 }}>
             <AppBar open={open} setOpen={setOpen} sourceValue={sourceValue} setSourceValue={setSourceValue} sources={sources} setSources={setSources} />
-            <Library data={libraryData} isLoading={loading} handleLoadMore={handleLoadMore} />
+            <Library data={libraryData} isLoading={loading} handleLoadMore={handleLoadMore} navigation={navigation} />
         </View >
     );
 }
