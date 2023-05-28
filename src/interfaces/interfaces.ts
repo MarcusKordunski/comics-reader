@@ -1,4 +1,4 @@
-export default interface LibraryItem {
+export interface LibraryItem {
     month: string;
     num: number;
     link: string;
@@ -10,4 +10,9 @@ export default interface LibraryItem {
     img: string;
     title: string;
     day: string;
+}
+
+export interface Source {
+    label: string;
+    value: string;
 }

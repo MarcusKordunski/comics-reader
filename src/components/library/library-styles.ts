@@ -5,5 +5,6 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 16,
+    zIndex: -5
   },
 });

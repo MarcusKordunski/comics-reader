@@ -1,6 +1,6 @@
 import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
 import styles from './library-styles';
-import LibraryItem from '../../interfaces/interfaces';
+import { LibraryItem } from '../../interfaces/interfaces';
 
 interface LibraryProps {
     data: LibraryItem[];

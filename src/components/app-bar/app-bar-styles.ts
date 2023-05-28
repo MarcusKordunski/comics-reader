@@ -20,4 +20,15 @@ export default StyleSheet.create({
     fontSize: 24,
     color: '#fff',
   },
+  dropdownContainer: {
+    width: 200,
+    backgroundColor: '#f4511e',
+    zIndex: 999,
+    elevation: 999
+  },
+  dropdown: {
+    backgroundColor: '#fff',
+    zIndex: 999,
+    elevation: 999
+  },
 });
