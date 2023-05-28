@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { AppBar, Library } from '../components'
 import { useState, useEffect } from 'react'
-import { LibraryItem } from '../interfaces/interfaces'
+import { LibraryItem, Source } from '../interfaces/interfaces'
 import axios from 'axios';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -18,13 +18,13 @@ interface DashboardProps {
 export default function Dashboard({ navigation }: DashboardProps) {
     const [libraryData, setLibraryData] = useState<LibraryItem[]>([])
     const [loading, setLoading] = useState<boolean>(false);
-    const [hasMore, setHasMore] = useState(true);
-    const [comicsQuantity, setComicsQuantity] = useState(0);
-    const [currentId, setCurrentId] = useState(0);
+    const [hasMore, setHasMore] = useState<boolean>(true);
+    const [comicsQuantity, setComicsQuantity] = useState<number>(0);
+    const [currentId, setCurrentId] = useState<number>(0);
 
     const [open, setOpen] = useState<boolean>(false);
     const [sourceValue, setSourceValue] = useState<string>('xkcd.com');
-    const [sources, setSources] = useState([
+    const [sources, setSources] = useState<Source[]>([
         { label: 'xkcd.com', value: 'xkcd.com' },
     ]);
 

@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { AppBar, ComicInfo, Library } from '../components'
 import { useState, useEffect } from 'react'
-import { LibraryItem } from '../interfaces/interfaces'
+import { LibraryItem, Source } from '../interfaces/interfaces'
 import axios from 'axios';
 
 type RootStackParamList = {
@@ -17,7 +17,7 @@ export default function Comic() {
 
     const [open, setOpen] = useState<boolean>(false);
     const [sourceValue, setSourceValue] = useState<string>('xkcd.com');
-    const [sources, setSources] = useState([
+    const [sources, setSources] = useState<Source[]>([
         { label: 'xkcd.com', value: 'xkcd.com' },
     ]);
 
